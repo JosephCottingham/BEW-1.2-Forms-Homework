@@ -3,17 +3,17 @@
 
 <h1>New Store</h1>
 
-<form>
+<form method="POST">
     <fieldset>
         <legend>Please enter your information:</legend>
 
+        {{ groceryStoreForm.csrf_token() }}
+        {{ groceryStoreForm.title.label() }}
+        {{ groceryStoreForm.title() }}
+        {{ groceryStoreForm.address.label() }}
+        {{ groceryStoreForm.address() }}
+        {{ groceryStoreForm.submit() }}
 
-
-        <!-- TODO: Remove the next paragraph and use the `form` object passed in 
-            from the route to render a form. -->
-        <p><em>Form fields go here!</em></p>
-
-        <input type="submit" value="Submit">
     </fieldset>
 </form>
 
