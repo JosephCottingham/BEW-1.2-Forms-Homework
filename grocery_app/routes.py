@@ -79,10 +79,9 @@ def store_detail(store_id):
 def item_detail(item_id):
     item = GroceryItem.query.get(item_id)
     groceryItemForm = GroceryItemForm(obj=item)
-    
     if groceryItemForm.validate_on_submit():
         # Update ORM GroceryItem
-        item.title = groceryItemForm.name.data
+        item.name = groceryItemForm.name.data
         item.price = groceryItemForm.price.data
         item.category = groceryItemForm.category.data
         item.photo_url = groceryItemForm.photo_url.data
